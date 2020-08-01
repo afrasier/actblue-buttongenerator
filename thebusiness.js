@@ -81,9 +81,11 @@ const setStyleFromURL = () => {
             elem.value = value;
         }
     }
+
+    handleSourceChanged(true);
 }
 
-const handleSourceChanged = () => {
+const handleSourceChanged = (skipSet) => {
     const actblueSource = getElem("actblueSource").value;
 
     const links = getLinks(actblueSource);
@@ -98,6 +100,12 @@ const handleSourceChanged = () => {
         `
     }
 
+    if (links.length === 0) {
+        links.push([0, "", "Test Button"]);
+    }
+
+    console.log(links)
+
     const buttons = links.map(x => generateButtonRow(x));
     const buttonsHTML = buttons.join("\n");
     const fullHTML = `
@@ -110,5 +118,7 @@ const handleSourceChanged = () => {
     getElem("generatedSource").value = fullHTML;
     getElem("preview").innerHTML = fullHTML;
 
-    setURLStyle();
+    if (!skipSet) {
+        setURLStyle();
+    }
 }
