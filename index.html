@@ -1,0 +1,63 @@
+<html style="margin: 0.5em 1em 0.5em 1em">
+
+<head>
+
+    <title>ActBlue Button Builder</title>
+    <script src="./thebusiness.js"></script>
+</head>
+
+<body>
+    <h1>Do you <em>hate</em> updating your donation e-mail buttons?</h1>
+    <small>Does HTML in e-mails make you <strong>angry</strong>?</small>
+    <p>Well look no further!</p>
+    <p>Simply paste your act blue generated links in the box on the left; and buttons will appear on the right!</p>
+    <p>Then, customize away and copy the output code into your e-mail template.</p>
+
+    <div style="width: 33%; text-align: center; float:left;">
+
+        <textarea id="actblueSource" name="actblueSource" rows="5" cols="75" oninput="handleSourceChanged()">
+            Paste your Actblue Generated Source here    
+        </textarea>
+    </div>
+    <div style="width: 33%; text-align: center; float: left;">
+
+        <textarea id="generatedSource" name="generatedSource" rows="5" cols="75">
+            Generated code will appear here
+        </textarea>
+    </div>
+    <div id="style" style="width: 33%; text-align: left; float: right;">
+        <h3 style="margin: 0;">Styling</h3>
+
+        <h5>Colors</h5>
+        <label for="color">Text Color:</label>
+        <input type="color" id="color" name="color" value="#FFFFFF" oninput="handleSourceChanged()"><br />
+
+        <label for="background-color">Background Color:</label>
+        <input type="color" id="background-color" name="background-color" value="#147fd7"
+            oninput="handleSourceChanged()">
+
+
+        <h5>Shapes and Sizes</h5>
+        <label for="font-size">Text Size:</label>
+        <input type="number" id="font-size" name="font-size" value="18" data-valueappend="px"
+            onchange="handleSourceChanged()">px
+
+        <input type="checkbox" id="text-transform" name="text-transform" value="Uppercase">
+        <label for="text-transform">Text Transform to Uppercase</label><br>
+
+
+    </div>
+    <div style="clear: both;"></div>
+
+    <h3>Preview</h3>
+    <div id="preview" name="preview">
+
+    </div>
+
+
+    <small style="position: absolute; bottom: 1em">
+        This is a quick and dirty utility made by <a href="https://github.com/afrasier">me.</a>
+    </small>
+</body>
+
+</html>
