@@ -4,6 +4,11 @@
 
     <title>ActBlue Button Builder</title>
     <script src="./thebusiness.js"></script>
+    <style>
+        input {
+            margin: 0.1em;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,12 +43,25 @@
 
 
         <h5>Shapes and Sizes</h5>
-        <label for="font-size">Text Size:</label>
-        <input type="number" id="font-size" name="font-size" value="18" data-valueappend="px"
-            onchange="handleSourceChanged()">px
+        <label for="font-size">Font Size:</label>
+        <input type="number" id="font-size" name="font-size" min="0" value="18" data-valueappend="px"
+            oninput="handleSourceChanged()">px<br />
 
-        <input type="checkbox" id="text-transform" name="text-transform" value="Uppercase">
-        <label for="text-transform">Text Transform to Uppercase</label><br>
+        <label for="font-weight">Font Weight:</label>
+        <input type="number" id="font-weight" name="font-weight" min="0" value="700"
+            oninput="handleSourceChanged()"><br />
+
+        <label for="width">Button Width:</label>
+        <input type="number" id="width" name="width" min="0" value="290" data-valueappend="px"
+            oninput="handleSourceChanged()">px<br />
+
+        <label for="border-radius">Corner Curvature:</label>
+        <input type="number" id="border-radius" name="border-radius" min="0" value="4" data-valueappend="px"
+            oninput="handleSourceChanged()">px<br />
+
+        <input type="checkbox" id="text-transform" name="text-transform" value="uppercase"
+            oninput="handleSourceChanged()">
+        <label for="text-transform">Text Transform to Uppercase</label><br />
 
 
     </div>

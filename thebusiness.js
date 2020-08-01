@@ -19,6 +19,10 @@ const getButtonStyles = () => {
     const styles = [...getElem("style").getElementsByTagName("input")];
 
     styles.forEach((item) => {
+        if (item.type === "checkbox" && !item.checked) {
+            return;
+        }
+
         let append = item.dataset.valueappend;
         append = append ? append : "";
         styleObject[item.id] = `${item.value}${append}`;
@@ -29,21 +33,16 @@ const getButtonStyles = () => {
 
 const generateButtonRow = (row) => {
     buttonStyleObject = getButtonStyles();
-    console.log(buttonStyleObject);
 
     buttonStyles = [
         "font-family:sans-serif",
         "border-top:1px solid #147fd7",
         "border-bottom:2px solid #147fd7",
-        "width:290px",
         "margin:12px auto",
-        "border-radius:4px",
         "text-align:center",
         "text-decoration:none",
         "padding:12px 5px 11px",
-        "font-weight:700",
         "display:block",
-        "text-transform:uppercase",
         "letter-spacing:0.075em",
     ];
 
