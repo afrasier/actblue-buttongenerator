@@ -11,12 +11,13 @@
     </style>
 </head>
 
-<body>
+<body onload="setStyleFromURL()">
     <h1>Do you <em>hate</em> updating your donation e-mail buttons?</h1>
     <small>Does HTML in e-mails make you <strong>angry</strong>?</small>
     <p>Well look no further!</p>
     <p>Simply paste your act blue generated links in the box on the left; and buttons will appear on the right!</p>
-    <p>Then, customize away and copy the output code into your e-mail template.</p>
+    <p>Then, customize away and copy the output code into your e-mail template. <strong>The URL of the page updates to a
+            bookmark-able and sharable link. It only saves style information.</strong></p>
 
     <div style="width: 33%; text-align: center; float:left;">
 
@@ -30,7 +31,8 @@
             Generated code will appear here
         </textarea>
     </div>
-    <div id="style" style="width: 33%; text-align: left; float: right;">
+    <div style="clear: both;"></div>
+    <div id="style-left" style="float: left; width: 33%;">
         <h3 style="margin: 0;">Styling</h3>
 
         <h5>Colors</h5>
@@ -39,10 +41,41 @@
 
         <label for="background-color">Background Color:</label>
         <input type="color" id="background-color" name="background-color" value="#147fd7"
-            oninput="handleSourceChanged()">
+            oninput="handleSourceChanged()"><br /><br />
 
+        <label for="border-top-color">Border (top) Color:</label>
+        <input type="color" id="border-top-color" name="border-top-color" value="#147fd7"
+            oninput="handleSourceChanged()"><br />
+
+        <label for="border-bottom-color">Border (bottom) Color:</label>
+        <input type="color" id="border-bottom-color" name="border-bottom-color" value="#147fd7"
+            oninput="handleSourceChanged()"><br />
+
+        <label for="border-left-color">Border (left) Color:</label>
+        <input type="color" id="border-left-color" name="border-left-color" value="#147fd7"
+            oninput="handleSourceChanged()"><br />
+
+        <label for="border-right-color">Border (right) Color:</label>
+        <input type="color" id="border-right-color" name="border-right-color" value="#147fd7"
+            oninput="handleSourceChanged()"><br />
+
+    </div>
+    <div style="float: left; width: 33%">
+        <h3>Preview</h3>
+        <div id="preview" name="preview">
+
+        </div>
+    </div>
+    <div id="style-right" style="float: left; width: 33%">
 
         <h5>Shapes and Sizes</h5>
+        <label for="font-size">Font:</label>
+        <input type="text" id="font-family" name="font-family" min="0" value="sans-serif"
+            oninput="handleSourceChanged()"><br />
+        <small><strong>TIP:</strong> Use a web compliant CSS font-family. (<a
+                href="https://www.w3schools.com/cssref/pr_font_font-family.asp" target="_blank">W3
+                School</a>)</small><br /><br />
+
         <label for="font-size">Font Size:</label>
         <input type="number" id="font-size" name="font-size" min="0" value="18" data-valueappend="px"
             oninput="handleSourceChanged()">px<br />
@@ -61,14 +94,24 @@
 
         <input type="checkbox" id="text-transform" name="text-transform" value="uppercase"
             oninput="handleSourceChanged()">
-        <label for="text-transform">Text Transform to Uppercase</label><br />
+        <label for="text-transform">Text Transform to Uppercase</label><br /><br />
 
+        <label for="border-top-width">Border (top) width:</label>
+        <input type="number" id="border-top-width" name="border-top-width" data-valueappend="px" value="2"
+            oninput="handleSourceChanged()">px<br />
 
-    </div>
-    <div style="clear: both;"></div>
+        <label for="border-bottom-width">Border (bottom) width:</label>
+        <input type="number" id="border-bottom-width" name="border-bottom-width" data-valueappend="px" value="2"
+            oninput="handleSourceChanged()">px<br />
 
-    <h3>Preview</h3>
-    <div id="preview" name="preview">
+        <label for="border-left-width">Border (left) width:</label>
+        <input type="number" id="border-left-width" name="border-left-width" data-valueappend="px" value="2"
+            oninput="handleSourceChanged()">px<br />
+
+        <label for="border-right-width">Border (right) width:</label>
+        <input type="number" id="border-right-width" name="border-right-width" data-valueappend="px" value="2"
+            oninput="handleSourceChanged()">px<br />
+
 
     </div>
 
